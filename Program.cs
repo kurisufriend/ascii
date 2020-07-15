@@ -16,7 +16,7 @@ namespace kot
             {
                 Console.WriteLine(@"maek ascii !!
                        kot <input>
-input argument /must/ be of types: {jpg, jpeg, png, bmp,}");
+input argument /must/ be of types: {jpg, jpeg, bmp,}");
                 System.Environment.Exit(0);
             }
             string path = args[0];
