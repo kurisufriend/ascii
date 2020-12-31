@@ -17,13 +17,23 @@ namespace kot
                 Console.WriteLine(@"maek ascii !!
                        kot <input>
 input argument /must/ be of types: {jpg, jpeg, png, bmp,}");
-                System.Environment.Exit(0);
+                System.Environment.Exit(-1);
             }
             string path = args[0];
             string final = "";
             string[] scale = {".",",",":",";","+","*","?","%","S","#","@"};
             //Array.Reverse(scale);
-            var f = new Bitmap(path);
+            Bitmap f;
+            try
+            {
+                f = new Bitmap(path);
+            }
+            catch
+            {
+                Console.WriteLine("bad path");
+                System.Environment.Exit(-1);
+            }
+            f = new Bitmap(path);
             for (int i = 0; i < f.Height; i += 30)
             {
                 for (int z = 0; z < f.Width; z += 30)
